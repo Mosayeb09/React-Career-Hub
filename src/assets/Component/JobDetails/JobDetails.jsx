@@ -42,10 +42,13 @@ const JobDetails = () => {
 
                     
                     </div>
+                    <button className="btn btn-primary">Apply Now </button>
+                   
                    
 
 
                 </div>
+                
             </div>
         </div>
     );
