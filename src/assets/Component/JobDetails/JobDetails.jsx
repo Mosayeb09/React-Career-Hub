@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { HiCurrencyDollar } from "react-icons/hi";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplication } from "../../../Utility/LocalStorage";
 
 
 
@@ -13,7 +14,11 @@ const JobDetails = () => {
     const job = jobs.find(job => job.id === intid)
     console.log(job);
 
-    const ApplyJob = () => toast("You have Apply job successfully ");
+    const ApplyJob = () =>{ 
+        saveJobApplication(id);
+        
+        toast("You have Apply job successfully ");
+    }
 
     return (
         <div>
@@ -35,6 +40,7 @@ const JobDetails = () => {
                         <br />
                         {job.experiences}
                     </p>
+                    
 
 
                 </div>
@@ -48,14 +54,15 @@ const JobDetails = () => {
 
                     </div>
 
-
+                    <button onClick={ApplyJob} className="btn btn-primary ">Apply Now </button>
 
 
 
                 </div>
-                <button onClick={ApplyJob} className="btn btn-primary ">Apply Now </button>
+                
             </div>
             <ToastContainer />
+           
         </div>
     );
 };
