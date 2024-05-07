@@ -15,7 +15,7 @@ const JobDetails = () => {
     console.log(job);
 
     const ApplyJob = () =>{ 
-        saveJobApplication(id);
+        saveJobApplication(intid);
         
         toast("You have Apply job successfully ");
     }
